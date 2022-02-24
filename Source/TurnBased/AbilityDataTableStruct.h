@@ -11,7 +11,7 @@ UENUM(BlueprintType)
 enum class ETeamEnum : uint8
 {
     OwnTeam     UMETA(DisplayName = "OwnTeam"),
-    TargetTeam      UMETA(DisplayName = "TargetTeam"),
+    OtherTeam      UMETA(DisplayName = "OtherTeam"),
 };
 
 UENUM(BlueprintType)
@@ -127,9 +127,6 @@ struct FAbilityEffectStruct
     UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Debuff || AbilityEffects == EAbilityEffects::Buff", EditConditionHides))
         int DeBuffStacks;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Debuff || AbilityEffects == EAbilityEffects::Buff", EditConditionHides))
-        int DeBuffDuration;
-
     UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::DOT", EditConditionHides))
         EDOTType DOTType;
 
@@ -144,6 +141,9 @@ struct FAbilityEffectStruct
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Cure", EditConditionHides))
         EDOTType CureType;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Cure", EditConditionHides))
+        EDeBuffType CureDeBuffType;
 };
 
 USTRUCT(BlueprintType)
