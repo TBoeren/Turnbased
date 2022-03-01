@@ -83,19 +83,19 @@ struct FAIAbilityModifierStruct
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         ETargetStat TargetStat;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::Health", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::Health"))
         EOperator Operator;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::Health", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::Health"))
         int Percentage;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::DOT", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::DOT"))
         EDOTType DOTType;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::DeBuff", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::DeBuff"))
         EAbilityTargets AbilityTarget;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::DeBuff", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "TargetStat == ETargetStat::DeBuff"))
         EDeBuffType DeBuffType;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -118,31 +118,31 @@ struct FAbilityEffectStruct
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
         EAbilityEffects AbilityEffects;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Damage || AbilityEffects == EAbilityEffects::Healing", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Damage || AbilityEffects == EAbilityEffects::Healing"))
         FInt32Range AbilityPowerRange;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Debuff || AbilityEffects == EAbilityEffects::Buff", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Debuff || AbilityEffects == EAbilityEffects::Buff"))
         EDeBuffType DeBuffType;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Debuff || AbilityEffects == EAbilityEffects::Buff", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Debuff || AbilityEffects == EAbilityEffects::Buff"))
         int DeBuffStacks;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::DOT", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::DOT"))
         EDOTType DOTType;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::DOT", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::DOT"))
         int DOTStrength;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::DOT", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::DOT"))
         int DOTDuration;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Move", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Move"))
         int MoveDistance;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Cure", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Cure"))
         EDOTType CureType;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Cure", EditConditionHides))
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "AbilityEffects == EAbilityEffects::Cure"))
         EDeBuffType CureDeBuffType;
 };
 
@@ -174,7 +174,7 @@ struct FAbilityStruct : public FTableRowBase
     UPROPERTY(EditAnywhere ,BlueprintReadWrite)
         TArray<int> AbilityPositions;
 
-    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "!TargetSelfOnly", EditConditionHides))
+    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "!TargetSelfOnly"))
         TArray<int> TargetPositions = {0,1,2,3};
 
     UPROPERTY(EditAnywhere ,BlueprintReadWrite)
@@ -183,13 +183,13 @@ struct FAbilityStruct : public FTableRowBase
     UPROPERTY(EditAnywhere ,BlueprintReadWrite)
         bool HasCooldown;
 
-    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "HasCooldown", EditConditionHides))
+    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "HasCooldown"))
         bool OnCooldown;
 
-    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "HasCooldown", EditConditionHides))
+    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "HasCooldown"))
         int CooldownDuration;
 
-    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "HasCooldown", EditConditionHides))
+    UPROPERTY(EditAnywhere ,BlueprintReadWrite, meta = (EditCondition = "HasCooldown"))
         int CurrentCooldown;
 
     UPROPERTY(EditAnywhere ,BlueprintReadWrite)
