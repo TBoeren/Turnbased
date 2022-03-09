@@ -8,6 +8,17 @@
 #include "AbilityDataTableStruct.generated.h"
 
 UENUM(BlueprintType)
+enum class EAbilityAnimationTypes: uint8
+{
+    Idle     UMETA(DisplayName = "Idle"),
+    AttackW      UMETA(DisplayName = "Attack (Weapon)"),
+    AttackP      UMETA(DisplayName = "Attack (Punch)"),
+    Spell      UMETA(DisplayName = "Spell"),
+    ReceiveHit      UMETA(DisplayName = "Receive Hit"),
+    Death      UMETA(DisplayName = "Death"),
+};
+
+UENUM(BlueprintType)
 enum class ETeamEnum : uint8
 {
     OwnTeam     UMETA(DisplayName = "OwnTeam"),
@@ -164,6 +175,9 @@ struct FAbilityStruct : public FTableRowBase
 
     UPROPERTY(EditAnywhere ,BlueprintReadWrite)
         FText AbilityDescription;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        EAbilityAnimationTypes AnimationType;
 
     UPROPERTY(EditAnywhere ,BlueprintReadWrite)
         ETeamEnum TargetTeam;
